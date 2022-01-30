@@ -43,23 +43,6 @@ except (KeyError, ValueError):
     END_DATE = date.today()
 logging.info(" END_DATE: " + str(END_DATE))
 
-
-# Create an empty DataFrame to hold the results:
-# df = pd.DataFrame(
-#     columns=[
-#         'data_date',
-#         'cycle_settlement_date',
-#         'bats_symbol',
-#         'security_name',
-#         'num_shares_net_short_current_cycle',
-#         'num_shares_net_short_previous_cycle',
-#         'cycle_avg_daily_trade_vol',
-#         'min_num_trade_days_to_cover_short',
-#         'split_indicator',
-#         'manual_revision_indicator'
-#     ])
-
-
 # Array to hold each CSV's data as a separate dataframe:
 dataframes_list = []
 
