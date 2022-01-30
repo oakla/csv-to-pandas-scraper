@@ -43,7 +43,7 @@ except (KeyError, ValueError):
     END_DATE = date.today()
 logging.info(" END_DATE: " + str(END_DATE))
 
-# Array to hold each CSV's data as a separate dataframe:
+# List to hold each CSV's data as a separate dataframe:
 dataframes_list = []
 
 
