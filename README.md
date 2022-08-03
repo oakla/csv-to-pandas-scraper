@@ -35,5 +35,3 @@ From the directory that this repo was downloaded to, run:
 **6. Run the script:**
 
 `python3 main.py` --or just-- `python main.py`
-
-**Note:** The target Start and End dates have been hardcoded at lines `26` and `27` 

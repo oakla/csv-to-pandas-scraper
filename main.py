@@ -6,7 +6,7 @@ from dateutil.relativedelta import relativedelta
 import logging
 import os
 import io
-from http import ClientSession
+from aiohttp import ClientSession
 import pandas as pd
 from datetime import datetime, date
 import asyncio
@@ -18,8 +18,8 @@ logging.getLogger().setLevel(logging.INFO)
 
 
 # Hardcoded test inputs
-START_DATE = '20150617'
-END_DATE = '20180630'
+DEFAULT_START_DATE = date(2021, 3, 1)
+DEFAULT_END_DATE = date(2021, 6, 1)
 
 
 # Base url for the initial date search & CSV downlaod:
@@ -34,13 +34,14 @@ try:
     START_DATE = datetime.strptime(
         os.environ['START_DATE'], date_format).date()
 except (KeyError, ValueError):
-    START_DATE = date(2021, 3, 1)
+    START_DATE = DEFAULT_START_DATE
 logging.info(" START_DATE: " + str(START_DATE))
 
 try:
     END_DATE = datetime.strptime(os.environ['END_DATE'], date_format).date()
 except (KeyError, ValueError):
-    END_DATE = date.today()
+    END_DATE = DEFAULT_END_DATE
+    # END_DATE = date.today()
 logging.info(" END_DATE: " + str(END_DATE))
 
 # List to hold each CSV's data as a separate dataframe:
